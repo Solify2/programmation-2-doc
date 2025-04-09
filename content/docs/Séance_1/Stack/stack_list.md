@@ -37,6 +37,12 @@ Stack_t new_stack() {
 
 void push(Stack_t stack, int value) {
     Node_t new_node = create_node(value);
+
+    if (stack == NULL) {
+        printf("Stack invalide (NULL)\n");
+        return;
+    }
+
     if (stack->head == NULL) {
         stack->head = new_node;
 
@@ -49,7 +55,8 @@ void push(Stack_t stack, int value) {
 
 
 int pop(Stack_t stack) {
-    if(stack->size==0) {
+    if(stack == NULL || stack->size==0) {
+        printf("Stack invalide (vide/null)\n");
         return -1;
     }
     int value = stack->head->value;
@@ -70,53 +77,66 @@ int size(Stack_t stack) {
     return stack->size;
 }
 
+void display_stack(Stack_t stack) {
+    Node_t current = stack->head;
+    printf("size %d \n", stack->size);
+    while (current != NULL) {
+        printf("%d -> ", current->value);
+        current = current->next;
+    }
+}
+
 int main(int argc, char **argv) {
-    printf("Hello World!\n");
+
 
     Stack_t stack = new_stack();
-
+    printf("-------------\n");
+    printf("Push élément dans une stack NULL: \n");
+    push(NULL, 12);
+    printf("-------------\n");
+    printf("Init Stack... \n");
+    printf("-------------\n");
     push(stack,3);
     printf("Push 3 \n");
-    printf("3 -> NULL\n");
-    printf("Taille:%i\n",size(stack));
-    printf("-------------\n");
-
+    display_stack(stack);
+    printf("\n-------------\n");
 
     push(stack,5);
     printf("Push 5 \n");
-    printf("5 -> 3 -> NULL\n");
-    printf("Taille:%i\n",size(stack));
-    printf("-------------\n");
+    display_stack(stack);
+    printf("\n-------------\n");
 
     push(stack,1);
     printf("Push 1 \n");
-    printf("1 -> 5 -> 3 -> NULL\n");
-    printf("Taille:%i\n",size(stack));
-    printf("-------------\n");
-
-
+    display_stack(stack);
+    printf("\n-------------\n");
 
     int a = pop(stack);
     printf("Pop \n");
     printf("Élement enlevé:%i\n",a);
-    printf("5 -> 3 -> NULL\n");
-    printf("-------------\n");
-
-
+    display_stack(stack);
+    printf("\n-------------\n");
 
     int b = pop(stack);
     printf("Pop \n");
     printf("Élement enlevé:%i\n",b);
-    printf("3 -> NULL\n");
-    printf("-------------\n");
-
-
+    display_stack(stack);
+    printf("\n-------------\n");
 
     int c = pop(stack);
     printf("Pop \n");
     printf("Élement enlevé:%i\n",c);
+    display_stack(stack);
+    printf("-------------\n");
+    printf("Pop depuis une stack vide...\n");
+    pop(stack);
+    printf("-------------\n");
 
+    printf("Pop depuis une référence NULL...\n");
+    pop(NULL);
+    printf("-------------\n");
 }
+
 
 ```
 
