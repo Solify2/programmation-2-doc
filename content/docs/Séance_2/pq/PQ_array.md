@@ -1,3 +1,6 @@
+# 1. Implémentation d'une file de priorité à l'aide d'un tableau (Array)
+> Une version simple qui utilise un tableau pour stocker les éléments.
+
 ```c
 #include <stdlib.h>
 #include <stdio.h>
@@ -27,7 +30,6 @@ PQ_t create(int (*leq)(int,int)){
   return pq;
 }
 
-
 void enqueue(PQ_t pq, int element) {
     if (pq==NULL){
       printf("PQ invalide\n");
@@ -43,7 +45,6 @@ void enqueue(PQ_t pq, int element) {
     pq->size++;
 }
 
-
 int serve(PQ_t pq) {
     if (pq==NULL || pq->size==0) {
         printf("PQ invalide (empty/null)\n");
@@ -57,7 +58,6 @@ int serve(PQ_t pq) {
     return element_pq;
 }
 
-
 int peek(PQ_t pq) {
     if (pq==NULL || pq->size==0) {
         printf("PQ invalide (empty/null)\n");
@@ -67,7 +67,6 @@ int peek(PQ_t pq) {
     int element_pq = pq->elements[0];
     return element_pq;
 }
-
 
 int min_priority(int a, int b) {
     return a <= b;
@@ -84,7 +83,6 @@ int empty(PQ_t pq) {
     return 0;
 }
 
-
 void print(PQ_t pq) {
     printf("Priority Queue: ");
     for (int i = 0; i < pq->size; i++) {
@@ -92,7 +90,6 @@ void print(PQ_t pq) {
     }
     printf("\n");
 }
-
 
 int main() {
     PQ_t pq = create(min_priority);
@@ -128,13 +125,11 @@ int main() {
 
     free(pq);
 }
-
 ```
 
+### Voici un exemple d'exécution d’une PQ basée sur un tableau (array)
 
-### Voici un exemple d'exécution d’une file d’attente (Queue) basée sur un tableau (array)
-
-```c
+```txt
 Enqueu elements: 
 Priority Queue: 10 
 Priority Queue: 2 10 
