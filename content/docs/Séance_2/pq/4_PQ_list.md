@@ -1,5 +1,7 @@
 # Implémentation d'une file de priorité basée sur une liste chaînée
 
+Une deuxième implémentation est d’utiliser une liste chaînée, de nouveau, l’insertion d’un nouvel élément nécessite de parcourir la liste pour trouver la bonne position, par contre, *retirer l’élément prioritaire est beaucoup plus rapide*, car il se trouve toujours en tête (head) de la liste selon l’ordre de tri sans avoir besoin de déclaer les autres éléments de la list. On peut donc le retirer en temps constant. Cette solution est donc plus intéressante que le tableau si on a besoin de retirer souvent des éléments prioritaires, mais elle reste limitée en cas d'insertion.
+
 ```c
 #include <stdlib.h>
 #include <stdio.h>

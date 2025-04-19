@@ -1,5 +1,7 @@
 # 1. Implémentation d'une file de priorité à l'aide d'un tableau (Array)
-> Une version simple qui utilise un tableau pour stocker les éléments.
+
+La première implémentation, la plus simple, consiste à utiliser un tableau (Array). Dans ce cas, à chaque fois que l'on insère un élément, on doit  trouver directement la bonne position pour l’insérer. Dans ce cas là, cela implique de parcourir tout ou partie du tableau, ce qui rend l'insertion assez coûteuse. De plus, lorsqu’on retire l’élément avec la plus haute priorité, il faut décaler tous les éléments qui le suivaient. Ces deux opérations **insertion et suppression** peuvent rendre cette approche peu performante lorsque le nombre d’éléments devient important.
+
 
 ```c
 #include <stdlib.h>

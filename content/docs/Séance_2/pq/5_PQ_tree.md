@@ -1,6 +1,9 @@
 # Implémentation d'une file de priorité avec un tas binaire (Binary Heap)
 > Une solution optimisée pour les performances, utilisant une structure de tas pour gérer les priorités efficacement.
 
+
+La solution la plus **efficace** est le tas binaire (binary heap). C’est une structure de type arbre binaire implémentée avec un tableau, Le principe du tas est que chaque nœud respecte une propriété d’ordre : par exemple, dans un max-priority, chaque parent est toujours plus grand que ses enfants. Grâce à cette organisation, l’insertion comme la suppression se font en **temps logarithmique  O (log n)**, car il suffit de réorganiser une seule branche de l’arbre à chaque opération. C’est donc une structure idéale pour manipuler des files de priorité contenant un grand nombre d’éléments, avec des performances équilibrées.
+
 ```c
 #include <stdio.h>
 #include <stdlib.h>
