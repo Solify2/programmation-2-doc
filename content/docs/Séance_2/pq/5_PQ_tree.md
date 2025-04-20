@@ -7,7 +7,6 @@ La solution la plus **efficace** est le tas binaire (binary heap). C'est une str
 
 Parfait ! Voici un texte fluide, clair, pas trop formel, qui explique bien ton programme de **tas binaire** tout en intégrant les trois points que tu veux aborder. Je garde un ton spontané, pédagogique et structuré.
 
----
 
 ### Explication du fonctionnement du tas binaire
 
@@ -40,6 +39,15 @@ Voici quelques exemples :
 
 Ces fonctions ne sont pas strictement nécessaires, mais Elles aident aussi à bien séparer la logique métier (le tas) des opérations techniques (calculs d'indices) et aussi elles réduisent le risque d'erreurs ce qui rend le code plus facile à maintenir et à comprendre.
 
+
+### Approche TDD
+
+Dans le cours, on a parlé d'un technique de développement appelée **TDD** (Test Driven Development). L’idée est simple : on commence par écrire des **tests qui échouent**, avant même d’avoir implémenté le code, puis on développe le programme petit à petit jusqu’à ce que les tests passent.
+
+Pour illustrer cette approche, j’ai créé une fonction appelée `unit_test`, qui permet de **simuler cette logique**. Elle sert à tester les différentes fonctionnalités du programme, en vérifiant si le comportement correspond bien à ce qu’on attend. Au départ, le test échoue puis en implémentant les différentes parties du code, les tests commencent à réussir. Cela permet de valider notre logique au fur et à mesure, tout en gardant une bonne base de vérification automatique.
+
+
+### Implémentation avec un tas binaire
 
 
 ```c
@@ -220,6 +228,8 @@ int main()
     return 0;
 }
 ```
+
+### Voici un exemple d'exécution d’une file de priorité basée sur un tas binaire (Binary Heap)
 
 ```txt
 ----------TEST avec max_priority----------------
