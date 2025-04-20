@@ -2,6 +2,20 @@
 
 Une deuxième implémentation est d’utiliser une liste chaînée, de nouveau, l’insertion d’un nouvel élément nécessite de parcourir la liste pour trouver la bonne position, par contre, *retirer l’élément prioritaire est beaucoup plus rapide*, car il se trouve toujours en tête (head) de la liste selon l’ordre de tri sans avoir besoin de déclaer les autres éléments de la list. On peut donc le retirer en temps constant. Cette solution est donc plus intéressante que le tableau si on a besoin de retirer souvent des éléments prioritaires, mais elle reste limitée en cas d'insertion.
 
+
+Dans cette version, la file de priorité est implémentée à l’aide d’une **liste chaînée triée**. Chaque élément de la file est représenté par un nœud (`Node`) contenant une valeur entière (`value`) et un pointeur vers le nœud suivant (`next`).
+
+La structure `PQ` représente la file elle-même. Elle contient :
+
+- `head` : un pointeur vers le premier élément de la liste, c’est-à-dire l’élément avec la priorité la plus élevée (selon la fonction `leq`).
+- `tail` : un pointeur vers le dernier élément de la file, utile pour optimiser l’insertion en fin de liste si besoin.
+- `size` : le nombre actuel d’éléments dans la file.
+- `maxsize` : le nombre maximal d’éléments que la file peut contenir.
+- `leq` : un pointeur vers une fonction de comparaison utilisée pour maintenir l’ordre de priorité dans la liste à chaque insertion.
+
+Grâce à cette structure, on peut facilement insérer un élément à la bonne position pour que la liste reste triée, et accéder rapidement à l’élément prioritaire en tête de liste.
+
+
 ```c
 #include <stdlib.h>
 #include <stdio.h>
