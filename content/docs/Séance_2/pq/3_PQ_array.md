@@ -3,7 +3,7 @@
 La première implémentation, la plus simple, consiste à utiliser un tableau (Array). Dans ce cas, à chaque fois que l'on insère un élément, on doit  trouver directement la bonne position pour l’insérer. Dans ce cas là, cela implique de parcourir tout ou partie du tableau, ce qui rend l'insertion assez coûteuse. De plus, lorsqu’on retire l’élément avec la plus haute priorité, il faut décaler tous les éléments qui le suivaient. Ces deux opérations **insertion et suppression** peuvent rendre cette approche peu performante lorsque le nombre d’éléments devient important.
 
 
-La file de priorité est représentée par une structure de données en C, de type struct, qu’on appelle ici PQ. Elle contient les éléments suivants :
+La file de priorité est représentée par un `struct`, que l'on appelle ici PQ. Il contient les éléments suivants :
 
 - `int *elements` : un pointeur vers un tableau d’entiers. Ce tableau stocke les éléments de la file.
 - `int size` : un entier qui représente le nombre actuel d’éléments dans la file. Il est mis à jour dynamiquement à chaque opération d’insertion (enqueue) ou de suppression (serve).
@@ -33,6 +33,7 @@ void main(){
 }
 ```
 
+### PQ implémentation
 
 ```c
 #include <stdlib.h>

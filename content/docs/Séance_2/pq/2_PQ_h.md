@@ -1,3 +1,9 @@
+# Fichier d’en-tête
+
+
+## Définition des fonctions de la file de priorité 
+
+
 ```c
 #ifndef PQ_H
 #define PQ_H

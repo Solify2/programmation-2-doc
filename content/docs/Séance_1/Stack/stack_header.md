@@ -1,3 +1,7 @@
+# Fichier d’en-tête
+
+## Définition des fonctions de la stack
+
 ```c
 #ifndef STACK_H
 #define STACK_H
