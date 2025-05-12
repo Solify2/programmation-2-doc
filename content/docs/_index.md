@@ -128,7 +128,88 @@ L'implémentation de ces structures à l'aide de listes chaînées m'a offert un
 Cette première séance constitue une base solide pour les concepts plus avancés qui seront abordés dans les séances suivantes, particulièrement en ce qui concerne l'optimisation des algorithmes et la sélection judicieuse des structures de données en fonction des problèmes à résoudre.
 
 
-2. **Séance 2**
+## **Séance 1**
+
+
+## Séance 2 : La File d'Attente à Priorité (Priority Queue)
+
+Une file de priorité (Priority Queue) est une structure de données abstraite (ADT) qui permet de stocker des éléments en fonction d'une valeur de priorité. La particularité de cette structure réside dans le fait que chaque élément possède une priorité qui détermine l'ordre dans lequel les éléments seront traités.
+
+Par exemple, dans une file de priorité contenant des entiers, on peut définir que l'élément le plus grand est celui avec la plus haute priorité. Il est également possible de créer des implémentations plus sophistiquées où la priorité dépend de multiples critères. Le principe fondamental reste que les éléments avec la priorité la plus élevée sont retirés (défilés) en premier de la file.
+
+Au cours de cette séance, j'ai exploré différentes méthodes d'implémentation de cette structure. Mon objectif était de partir d'une implémentation basique, peu optimale d'un point de vue algorithmique, pour progressivement aboutir à une solution beaucoup plus efficace.
+
+### La file de priorité implémentée avec un tableau
+
+Ma première approche, la plus intuitive, a consisté à utiliser un simple tableau (Array). Dans cette implémentation, à chaque insertion d'un élément, je dois déterminer sa position exacte en fonction de sa priorité, puis décaler les autres éléments en cas d'insertion au début ou au milieu de la liste. Cette opération implique de parcourir tout ou partie du tableau, rendant l'insertion particulièrement coûteuse en temps de calcul.
+
+De plus, lorsque je retire l'élément avec la plus haute priorité, je dois décaler tous les éléments qui le suivaient. J'ai constaté que ces deux opérations (insertion et suppression) peuvent significativement dégrader les performances lorsque le nombre d'éléments devient important, car elles nécessitent un temps linéaire O(n). J'ai également noté que l'utilisation d'un tableau impose certaines limitations concernant la taille et la gestion de la mémoire.
+
+### La file de priorité implémentée avec une liste chaînée
+
+Ma deuxième implémentation a fait appel à une liste chaînée. Là encore, l'insertion d'un nouvel élément m'oblige à parcourir la liste pour trouver la position appropriée selon sa priorité, ce qui reste une opération en temps linéaire O(n).
+
+Cependant, j'ai découvert un avantage significatif : retirer l'élément prioritaire devient beaucoup plus rapide, car celui-ci se trouve toujours en tête (head) de la liste selon l'ordre de tri, sans nécessiter de décalage des autres éléments. Je peux donc le retirer en temps constant O(1). Cette solution s'avère plus avantageuse que le tableau si j'ai besoin de retirer fréquemment des éléments prioritaires, mais elle demeure limitée pour les opérations d'insertion.
+
+### La file de priorité implémentée avec un tas binaire
+
+Finalement, j'ai implémenté la solution la plus efficace : le tas binaire (binary heap). Cette structure, basée sur un arbre binaire mais implémentée astucieusement avec un tableau, m'a permis d'obtenir des performances bien supérieures.
+
+Le principe fondamental du tas est que chaque nœud respecte une propriété d'ordre spécifique : par exemple, dans un tas de type max-priority, chaque parent est toujours plus grand que ses enfants. Grâce à cette organisation hiérarchique, j'ai constaté que les opérations d'insertion comme de suppression s'effectuent en temps logarithmique O(log n), car il suffit de réorganiser une seule branche de l'arbre à chaque opération.
+
+Le tas binaire représente donc une structure idéale pour manipuler des files de priorité contenant un grand nombre d'éléments, offrant des performances équilibrées pour toutes les opérations essentielles.
+
+### Analyse algorithmique comparative
+
+En analysant mes différentes implémentations, j'ai pu tirer plusieurs conclusions importantes :
+
+1. Avec le tableau simple, j'ai observé que les opérations manipulant la file de priorité nécessitent un temps linéaire O(n), ce qui devient problématique lorsque la taille des données augmente.
+
+2. En passant à la liste chaînée, j'ai constaté une amélioration notable pour l'opération de défilement (dequeue). Grâce à la flexibilité de cette structure, j'ai pu défiler l'élément le plus prioritaire (en le plaçant à la tête de la liste) en temps constant O(1), sans avoir besoin de décaler les autres éléments. Cette solution est donc plus efficace que le tableau lorsqu'on doit retirer fréquemment des éléments prioritaires, mais elle reste limitée concernant les insertions.
+
+3. L'implémentation utilisant un tas binaire, qui s'appuie sur le concept d'arbre binaire, m'a permis d'atteindre une complexité logarithmique O(log n) pour toutes les opérations principales. Le tas binaire organise les éléments de façon à maintenir constamment une propriété d'ordre entre les nœuds parents et enfants. Lors de l'insertion ou de la suppression d'un élément, le tas s'auto-réorganise en "percolant" l'élément vers le haut ou le bas de l'arbre, ce qui garantit que l'élément le plus prioritaire reste toujours accessible rapidement.
+
+
+## Concepts importants supplémentaires
+
+### 1. Les fonctions d'ordre supérieur (Higher Order Functions)
+
+A travers de cette séance, j'ai également approfondi le concept des fonctions d'ordre supérieur, un principe fondamental de la programmation fonctionnelle. Ces fonctions sont caractérisées par leur capacité à prendre d'autres fonctions comme arguments ou à renvoyer des fonctions comme résultats.
+
+Ce concept m'était déjà familier grâce à mes connaissances préalable en JavaScript, particulièrement dans le contexte de la programmation fonctionnelle.
+
+Dans le cadre de ces séances en C, j'ai pu transposer ce concept en implémentant des fonctions qui acceptent des pointeurs de fonction comme paramètres. Cela m'a permis de créer des structures de données plus flexibles et génériques, notamment pour la file de priorité où la fonction de comparaison peut être passée en argument pour déterminer l'ordre de priorité selon différents critères.
+
+Cette approche m'a permis de réutiliser le même code pour diverses logiques métier sans avoir à modifier la structure sous-jacente. Par exemple, j'ai pu utiliser la même implémentation de file de priorité pour ordonner des éléments selon un critère numérique, alphabétique ou même selon des règles personnalisées complexes.
+
+### 2. Le développement piloté par les tests (TDD) et les tests unitaires
+
+Lors de l'une de nos séances, nous avons abordé le concept fondamental du développement piloté par les tests (Test-Driven Development ou TDD). Cette méthodologie inverse le flux de développement traditionnel en commençant par l'écriture des tests avant même d'implémenter le code fonctionnel.
+
+Le principe du TDD repose sur un cycle en trois étapes : On commence par écrire un test qui échoue (puis on implémente le minimum de code nécessaire pour que le test réussisse, et enfin on améliore le code sans modifier son comportement.
+
+Dans le cadre de mes projets, j'ai tenté de simuler cette approche en créant des fonctions de test qui échouaient initialement. Ces tests définissaient clairement les comportements attendus de mes structures de données. Par exemple, pour la file de priorité, j'ai d'abord écrit des tests vérifiant que l'élément défilé était bien celui avec la plus haute priorité.
+
+Au fur et à mesure de mon implémentation, j'ai progressivement fait évoluer mon code pour satisfaire ces tests. Cette démarche m'a aidé à clarifier mes objectifs, à détecter rapidement les régressions et à m'assurer que chaque fonctionnalité répondait correctement aux spécifications. Cette expérience m'a confirmé l'intérêt majeur des tests unitaires pour garantir la robustesse et la fiabilité du code, particulièrement dans le contexte de structures de données complexes comme les tas binaires.
+
+## Takeaways de la Séance 2
+
+1. **Importance de l'analyse comparative** : J'ai appris à évaluer systématiquement différentes implémentations d'une même structure de données pour identifier celle qui répond le mieux aux exigences spécifiques du problème.
+
+2. **Compromis performance/complexité** : J'ai compris que le choix d'une structure de données implique souvent un compromis entre la simplicité d'implémentation et l'efficacité algorithmique.
+
+3. **Puissance des structures d'arbre** : J'ai découvert comment les structures de type arbre, comme le tas binaire, peuvent offrir des performances logarithmiques là où des structures linéaires imposent des complexités en O(n).
+
+4. **Optimisation ciblée** : J'ai réalisé l'importance d'adapter l'implémentation en fonction des opérations les plus fréquemment utilisées dans un contexte donné. Par exemple, si mon application nécessite beaucoup d'insertions mais peu de suppressions, une liste chaînée triée pourrait être préférable. À l'inverse, si je dois principalement récupérer l'élément le plus prioritaire rapidement et fréquemment, un tas binaire sera bien plus efficace. Cette réflexion m'a appris à ne pas chercher une solution universelle, mais plutôt la structure qui correspond le mieux au profil d'utilisation spécifique du problème à résoudre.
+
+5. **Application pratique de la notation Big O** : Cette séance m'a permis d'appliquer concrètement les concepts théoriques de complexité algorithmique pour guider mes choix d'implémentation.
+
+
+6. **Flexibilité des fonctions d'ordre supérieur** : J'ai mis en pratique l'utilisation de fonctions prenant d'autres fonctions comme paramètres, ce qui m'a permis de créer des structures adaptables à différents critères de priorité sans modifier leur implémentation.
+
+7. **Développement guidé par les tests** : En écrivant des tests avant le code fonctionnel, j'ai pu clarifier mes objectifs et vérifier systématiquement que mes implémentations répondaient correctement aux comportements attendus de mes structures de données.
+
+
 3. **Séance 3**
 4. **Séance 4**
 
