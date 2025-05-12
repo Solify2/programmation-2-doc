@@ -149,7 +149,7 @@ int main(){
 }
 ```
 
-### Voici un exemple d'exécution d’une file d’attente (Queue) basée sur une liste chainée
+### Exemple d'exécution d’une file d’attente (Queue) basée sur une liste chainée
 
 ```txt
 

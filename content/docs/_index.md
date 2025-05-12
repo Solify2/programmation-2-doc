@@ -33,7 +33,7 @@ Une question que je me posais régulièrement durant mon apprentissage était : 
 ## **Séance 1**
 
 
-## La Liste Chaînée
+## Séance - 1 La Liste Chaînée
 
 Je souhaitrais commencer par expliquer la concept d'une listé chiané car elle serait utiliser dans l'implémentation des autres strucutres...
 
@@ -84,7 +84,7 @@ Grâce à cette implémentation, les deux opérations principales d'une file d'a
 
 
 
-## La Pile (Stack)
+## Séance - 1 La Pile (Stack)
 
 Une pile (en anglais "stack") est un type abstrait de données basé sur le principe « dernier entré, premier sorti », désigné en anglais par l'acronyme LIFO ("last in, first out"). Concrètement, cela signifie que le dernier élément ajouté à la pile sera le premier à en être retiré.
 
@@ -113,7 +113,7 @@ Cette séance m'a permis de comprendre l'importance cruciale du choix d'une stru
 
 L'implémentation de ces structures à l'aide de listes chaînées m'a offert une perspective concrète sur l'optimisation des performances : les opérations d'ajout et de retrait s'effectuent en temps constant O(1), indépendamment du nombre d'éléments stockés. Cette efficacité temporelle représente un avantage considérable par rapport à d'autres implémentations qui nécessiteraient des décalages d'éléments coûteux.
 
-### Takeaways essentiels
+### Séance - 1 Takeaways essentiels
 
 1. **Maîtrise des structures fondamentales** : J'ai acquis une compréhension approfondie des piles, des files et des listes chaînées, ainsi que de leurs propriétés et comportements spécifiques.
 
@@ -128,10 +128,10 @@ L'implémentation de ces structures à l'aide de listes chaînées m'a offert un
 Cette première séance constitue une base solide pour les concepts plus avancés qui seront abordés dans les séances suivantes, particulièrement en ce qui concerne l'optimisation des algorithmes et la sélection judicieuse des structures de données en fonction des problèmes à résoudre.
 
 
-## **Séance 1**
 
+## Séance 2
 
-## Séance 2 : La File d'Attente à Priorité (Priority Queue)
+## Séance 2 - La File d'Attente à Priorité (Priority Queue)
 
 Une file de priorité (Priority Queue) est une structure de données abstraite (ADT) qui permet de stocker des éléments en fonction d'une valeur de priorité. La particularité de cette structure réside dans le fait que chaque élément possède une priorité qui détermine l'ordre dans lequel les éléments seront traités.
 
@@ -139,19 +139,19 @@ Par exemple, dans une file de priorité contenant des entiers, on peut définir 
 
 Au cours de cette séance, j'ai exploré différentes méthodes d'implémentation de cette structure. Mon objectif était de partir d'une implémentation basique, peu optimale d'un point de vue algorithmique, pour progressivement aboutir à une solution beaucoup plus efficace.
 
-### La file de priorité implémentée avec un tableau
+### Séance 2 - La file de priorité implémentée avec un tableau
 
 Ma première approche, la plus intuitive, a consisté à utiliser un simple tableau (Array). Dans cette implémentation, à chaque insertion d'un élément, je dois déterminer sa position exacte en fonction de sa priorité, puis décaler les autres éléments en cas d'insertion au début ou au milieu de la liste. Cette opération implique de parcourir tout ou partie du tableau, rendant l'insertion particulièrement coûteuse en temps de calcul.
 
 De plus, lorsque je retire l'élément avec la plus haute priorité, je dois décaler tous les éléments qui le suivaient. J'ai constaté que ces deux opérations (insertion et suppression) peuvent significativement dégrader les performances lorsque le nombre d'éléments devient important, car elles nécessitent un temps linéaire O(n). J'ai également noté que l'utilisation d'un tableau impose certaines limitations concernant la taille et la gestion de la mémoire.
 
-### La file de priorité implémentée avec une liste chaînée
+### Séance 2 - La file de priorité implémentée avec une liste chaînée
 
 Ma deuxième implémentation a fait appel à une liste chaînée. Là encore, l'insertion d'un nouvel élément m'oblige à parcourir la liste pour trouver la position appropriée selon sa priorité, ce qui reste une opération en temps linéaire O(n).
 
 Cependant, j'ai découvert un avantage significatif : retirer l'élément prioritaire devient beaucoup plus rapide, car celui-ci se trouve toujours en tête (head) de la liste selon l'ordre de tri, sans nécessiter de décalage des autres éléments. Je peux donc le retirer en temps constant O(1). Cette solution s'avère plus avantageuse que le tableau si j'ai besoin de retirer fréquemment des éléments prioritaires, mais elle demeure limitée pour les opérations d'insertion.
 
-### La file de priorité implémentée avec un tas binaire
+### Séance 2 - La file de priorité implémentée avec un tas binaire
 
 Finalement, j'ai implémenté la solution la plus efficace : le tas binaire (binary heap). Cette structure, basée sur un arbre binaire mais implémentée astucieusement avec un tableau, m'a permis d'obtenir des performances bien supérieures.
 
@@ -159,7 +159,7 @@ Le principe fondamental du tas est que chaque nœud respecte une propriété d'o
 
 Le tas binaire représente donc une structure idéale pour manipuler des files de priorité contenant un grand nombre d'éléments, offrant des performances équilibrées pour toutes les opérations essentielles.
 
-### Analyse algorithmique comparative
+### sé&nce 2 - Analyse algorithmique comparative
 
 En analysant mes différentes implémentations, j'ai pu tirer plusieurs conclusions importantes :
 
@@ -170,7 +170,7 @@ En analysant mes différentes implémentations, j'ai pu tirer plusieurs conclusi
 3. L'implémentation utilisant un tas binaire, qui s'appuie sur le concept d'arbre binaire, m'a permis d'atteindre une complexité logarithmique O(log n) pour toutes les opérations principales. Le tas binaire organise les éléments de façon à maintenir constamment une propriété d'ordre entre les nœuds parents et enfants. Lors de l'insertion ou de la suppression d'un élément, le tas s'auto-réorganise en "percolant" l'élément vers le haut ou le bas de l'arbre, ce qui garantit que l'élément le plus prioritaire reste toujours accessible rapidement.
 
 
-## Concepts importants supplémentaires
+## sé&nce 2 - Concepts importants supplémentaires
 
 ### 1. Les fonctions d'ordre supérieur (Higher Order Functions)
 
@@ -192,7 +192,7 @@ Dans le cadre de mes projets, j'ai tenté de simuler cette approche en créant d
 
 Au fur et à mesure de mon implémentation, j'ai progressivement fait évoluer mon code pour satisfaire ces tests. Cette démarche m'a aidé à clarifier mes objectifs, à détecter rapidement les régressions et à m'assurer que chaque fonctionnalité répondait correctement aux spécifications. Cette expérience m'a confirmé l'intérêt majeur des tests unitaires pour garantir la robustesse et la fiabilité du code, particulièrement dans le contexte de structures de données complexes comme les tas binaires.
 
-## Takeaways de la Séance 2
+## sé&nce 2 - Takeaways de la Séance 2
 
 1. **Importance de l'analyse comparative** : J'ai appris à évaluer systématiquement différentes implémentations d'une même structure de données pour identifier celle qui répond le mieux aux exigences spécifiques du problème.
 
