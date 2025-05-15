@@ -1,8 +1,40 @@
-```c
-//
-// Created by Ahmed Soleiman on 02/05/2025.
-//
 
+# Séance 3 : utilisation de listes chainées, files d’attente, piles, files de priorité
+
+Dans mon implémentation, j'ai conçu plusieurs structures qui forment l'architecture de mon jeu de combat. Voici une description détaillée de ces composants :
+
+### struct Fighter
+Cette structure représente un combattant dans le jeu et contient les propriétés essentielles suivantes :
+- `name` : nom du combattant
+- `pv` : points de vie du combattant
+- `speed` : vitesse du combattant 
+- `position` : coordonnées (x,y) actuelles du combattant
+
+### struct FighterList
+J'ai implémenté cette structure sous forme d'une liste chaînée qui permet de gérer efficacement l'ensemble des combattants présents dans la partie. Cette approche me permet d'ajouter ou de retirer des combattants dynamiquement sans avoir à redimensionner un tableau.
+
+### struct Position
+Définit les coordonnées spatiales d'une entité dans le jeu. Elle contient deux valeurs :
+- `x` : position horizontale
+- `y` : position verticale
+Cette structure est utilisée à la fois par les combattants et les tirs.
+
+### struct Node
+Représente un noeud dans la liste chainée des combattants. Chaque noeud contient :
+- Les données d'un combattant (Fighter pointeur)
+- Un pointeur vers le nœud suivant
+Cette structure est essentielle pour l'implémentation de la liste chaînée.
+
+### struct Tir
+Modélise un projectile dans le jeu avec les caractéristiques suivantes :
+- `speed` : vitesse d'un tir
+- `power` : puissance d'un tir
+- `position` : coordonnées du tir
+
+### struct PQ
+Une file de priorité (Priority Queue) spécifiquement pour gérer les tirs. Cette structure permet de traiter les tirs selon leur priorité, par exemple en fonction de leur vitesse.
+
+```c
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
