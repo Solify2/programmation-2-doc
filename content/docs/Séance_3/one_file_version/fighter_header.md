@@ -32,5 +32,4 @@ Tir_t empty(PQ_t pq);
 
 #endif //FIGHTER_H
 
-#endif
 ```

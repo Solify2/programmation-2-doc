@@ -15,7 +15,6 @@ Dans cette section, je vais parcourir les différentes séances et présenter le
 
 ### Compétences générales développées tout au long du projet
 
-
 1. **Consolidation des connaissances en C et découverte de concepts avancés:**
 Ces séances m'ont permis de revisiter les concepts fondamentaux abordés dans le cours de programmation 1, tout en approfondissant ma compréhension du fonctionnement de la mémoire en C. J'ai pu faire la distinction entre les deux types d'allocation mémoire (dynamique et statique), notamment à travers l'utilisation de la fonction `malloc()` et l'importance de libérer la mémoire avec `free()` pour éviter ce que nous appelons dans le jargon informatique "les fuites de mémoire" (memory leaks).
 
@@ -33,7 +32,7 @@ Une question que je me posais régulièrement durant mon apprentissage était : 
 ## **Séance 1**
 
 
-## Séance - 1 La Liste Chaînée
+## La Liste Chaînée
 
 Je souhaitrais commencer par expliquer la concept d'une listé chiané car elle serait utiliser dans l'implémentation des autres strucutres...
 
@@ -65,7 +64,7 @@ Cette analyse m'a permis de comprendre que le choix entre liste chaînée et tab
 
 
 
-### La File d'Attente (Queue)
+## La File d'Attente (Queue)
 
 En informatique, une file d'attente (en anglais "queue") est un type abstrait de données basé sur le principe « premier entré, premier sorti » ou PEPS, désigné en anglais par l'acronyme FIFO ("first in, first out"). Concrètement, cela signifie que les premiers éléments ajoutés à la file seront les premiers à en être retirés.
 
@@ -84,7 +83,7 @@ Grâce à cette implémentation, les deux opérations principales d'une file d'a
 
 
 
-## Séance - 1 La Pile (Stack)
+## La Pile (Stack)
 
 Une pile (en anglais "stack") est un type abstrait de données basé sur le principe « dernier entré, premier sorti », désigné en anglais par l'acronyme LIFO ("last in, first out"). Concrètement, cela signifie que le dernier élément ajouté à la pile sera le premier à en être retiré.
 
@@ -105,7 +104,7 @@ En travaillant avec cette implémentation, j'ai identifié plusieurs avantages :
 2. **Taille dynamique** : La pile peut croître ou diminuer selon les besoins, sans gaspillage de mémoire.
 3. **Simplicité d'implémentation** : L'ajout et la suppression se font toujours au même endroit (le sommet).
 
-## Conclusion de la Séance 1
+### Conclusion de la Séance 1
 
 Au terme de cette première séance consacrée aux structures de données fondamentales, j'ai exploré en profondeur les files d'attente (queues) et les piles (stacks), ainsi que leur implémentation optimale à l'aide de listes chaînées.
 
@@ -113,7 +112,7 @@ Cette séance m'a permis de comprendre l'importance cruciale du choix d'une stru
 
 L'implémentation de ces structures à l'aide de listes chaînées m'a offert une perspective concrète sur l'optimisation des performances : les opérations d'ajout et de retrait s'effectuent en temps constant O(1), indépendamment du nombre d'éléments stockés. Cette efficacité temporelle représente un avantage considérable par rapport à d'autres implémentations qui nécessiteraient des décalages d'éléments coûteux.
 
-### Séance - 1 Takeaways essentiels
+### Takeaways de la Séance 1
 
 1. **Maîtrise des structures fondamentales** : J'ai acquis une compréhension approfondie des piles, des files et des listes chaînées, ainsi que de leurs propriétés et comportements spécifiques.
 
@@ -129,9 +128,9 @@ Cette première séance constitue une base solide pour les concepts plus avancé
 
 
 
-## Séance 2
+## **Séance 2**
 
-## Séance 2 - La File d'Attente à Priorité (Priority Queue)
+## La File d'Attente à Priorité (Priority Queue)
 
 Une file de priorité (Priority Queue) est une structure de données abstraite (ADT) qui permet de stocker des éléments en fonction d'une valeur de priorité. La particularité de cette structure réside dans le fait que chaque élément possède une priorité qui détermine l'ordre dans lequel les éléments seront traités.
 
@@ -139,19 +138,19 @@ Par exemple, dans une file de priorité contenant des entiers, on peut définir 
 
 Au cours de cette séance, j'ai exploré différentes méthodes d'implémentation de cette structure. Mon objectif était de partir d'une implémentation basique, peu optimale d'un point de vue algorithmique, pour progressivement aboutir à une solution beaucoup plus efficace.
 
-### Séance 2 - La file de priorité implémentée avec un tableau
+### La file de priorité implémentée avec un tableau
 
 Ma première approche, la plus intuitive, a consisté à utiliser un simple tableau (Array). Dans cette implémentation, à chaque insertion d'un élément, je dois déterminer sa position exacte en fonction de sa priorité, puis décaler les autres éléments en cas d'insertion au début ou au milieu de la liste. Cette opération implique de parcourir tout ou partie du tableau, rendant l'insertion particulièrement coûteuse en temps de calcul.
 
 De plus, lorsque je retire l'élément avec la plus haute priorité, je dois décaler tous les éléments qui le suivaient. J'ai constaté que ces deux opérations (insertion et suppression) peuvent significativement dégrader les performances lorsque le nombre d'éléments devient important, car elles nécessitent un temps linéaire O(n). J'ai également noté que l'utilisation d'un tableau impose certaines limitations concernant la taille et la gestion de la mémoire.
 
-### Séance 2 - La file de priorité implémentée avec une liste chaînée
+### La file de priorité implémentée avec une liste chaînée
 
 Ma deuxième implémentation a fait appel à une liste chaînée. Là encore, l'insertion d'un nouvel élément m'oblige à parcourir la liste pour trouver la position appropriée selon sa priorité, ce qui reste une opération en temps linéaire O(n).
 
 Cependant, j'ai découvert un avantage significatif : retirer l'élément prioritaire devient beaucoup plus rapide, car celui-ci se trouve toujours en tête (head) de la liste selon l'ordre de tri, sans nécessiter de décalage des autres éléments. Je peux donc le retirer en temps constant O(1). Cette solution s'avère plus avantageuse que le tableau si j'ai besoin de retirer fréquemment des éléments prioritaires, mais elle demeure limitée pour les opérations d'insertion.
 
-### Séance 2 - La file de priorité implémentée avec un tas binaire
+### La file de priorité implémentée avec un tas binaire
 
 Finalement, j'ai implémenté la solution la plus efficace : le tas binaire (binary heap). Cette structure, basée sur un arbre binaire mais implémentée astucieusement avec un tableau, m'a permis d'obtenir des performances bien supérieures.
 
@@ -159,7 +158,7 @@ Le principe fondamental du tas est que chaque nœud respecte une propriété d'o
 
 Le tas binaire représente donc une structure idéale pour manipuler des files de priorité contenant un grand nombre d'éléments, offrant des performances équilibrées pour toutes les opérations essentielles.
 
-### sé&nce 2 - Analyse algorithmique comparative
+### Analyse algorithmique comparative
 
 En analysant mes différentes implémentations, j'ai pu tirer plusieurs conclusions importantes :
 
@@ -170,7 +169,7 @@ En analysant mes différentes implémentations, j'ai pu tirer plusieurs conclusi
 3. L'implémentation utilisant un tas binaire, qui s'appuie sur le concept d'arbre binaire, m'a permis d'atteindre une complexité logarithmique O(log n) pour toutes les opérations principales. Le tas binaire organise les éléments de façon à maintenir constamment une propriété d'ordre entre les nœuds parents et enfants. Lors de l'insertion ou de la suppression d'un élément, le tas s'auto-réorganise en "percolant" l'élément vers le haut ou le bas de l'arbre, ce qui garantit que l'élément le plus prioritaire reste toujours accessible rapidement.
 
 
-## sé&nce 2 - Concepts importants supplémentaires
+## Concepts importants supplémentaires
 
 ### 1. Les fonctions d'ordre supérieur (Higher Order Functions)
 
@@ -192,7 +191,7 @@ Dans le cadre de mes projets, j'ai tenté de simuler cette approche en créant d
 
 Au fur et à mesure de mon implémentation, j'ai progressivement fait évoluer mon code pour satisfaire ces tests. Cette démarche m'a aidé à clarifier mes objectifs, à détecter rapidement les régressions et à m'assurer que chaque fonctionnalité répondait correctement aux spécifications. Cette expérience m'a confirmé l'intérêt majeur des tests unitaires pour garantir la robustesse et la fiabilité du code, particulièrement dans le contexte de structures de données complexes comme les tas binaires.
 
-## sé&nce 2 - Takeaways de la Séance 2
+## Takeaways de la Séance 2
 
 1. **Importance de l'analyse comparative** : J'ai appris à évaluer systématiquement différentes implémentations d'une même structure de données pour identifier celle qui répond le mieux aux exigences spécifiques du problème.
 
@@ -210,6 +209,35 @@ Au fur et à mesure de mon implémentation, j'ai progressivement fait évoluer m
 7. **Développement guidé par les tests** : En écrivant des tests avant le code fonctionnel, j'ai pu clarifier mes objectifs et vérifier systématiquement que mes implémentations répondaient correctement aux comportements attendus de mes structures de données.
 
 
-3. **Séance 3**
-4. **Séance 4**
+## **séance 3**
 
+La séance 3 était entièrement consacrée à la réalisation d'un projet pratique. Contrairement aux séances précédentes qui introduisaient de nouveaux concepts théoriques, cette séance m'a offert l'opportunité d'appliquer concrètement les connaissances acquises lors des séances 1 et 2.
+
+## Séance 4 : Les Structures de Type Arbre
+
+> [!NOTE]
+> Les informations présentées ci-dessous sur les structures des arbres sont inspirées d'une excellente vidéo éducative disponible sur YouTube *[vidéo 1](https://youtu.be/Z1Znyx11pvM?si=gkfaeevGgOd2N1kz)* , *[vidéo 2](https://youtu.be/MayJowPcAwM?si=Pxr1Hp7AqbL3bQnT)*.
+
+
+
+Après avoir implémenté un arbre binaire dans le contexte du tas binaire pour la file de priorité, cette séance est entièrement consacrée à l'exploration approfondie des structures de type arbre, et plus particulièrement de l'arbre binaire de recherche.
+
+## Définition concise d'un arbre
+
+Un arbre est une structure de données hiérarchique non linéaire composée de nœuds reliés entre eux par des liens, sans former de cycle. Il commence par un nœud spécial appelé racine (root), à partir duquel se développent des branches vers d'autres nœuds. Dans un arbre binaire, chaque nœud parent contient typiquement deux pointeurs dirigés vers ses nœuds enfants (généralement désignés comme enfant gauche et enfant droit). Ces pointeurs représentent les connexions ou arêtes de l'arbre et permettent de naviguer dans la structure. Cette organisation permet de représenter efficacement des relations hiérarchiques entre les données et offre des avantages significatifs pour le stockage et la recherche d'informations.
+
+
+## Terminologie clé pour comprendre les structures d'arbre
+
+Voici quelques termes fondamentaux qui m'ont été particulièrement utiles pour comprendre le concept et le fonctionnement des structures arborescentes :
+
+* **Racine (Root)** : Le nœud supérieur de l'arbre, point de départ de toute la structure.
+* **Parent / Enfant** : Un nœud parent est directement connecté à un ou plusieurs nœuds enfants situés au niveau inférieur.
+* ** Leaf node ** : Nœud qui n'a pas d'enfants.
+* **Nœud interne** : Tout nœud qui n'est ni un leaf node ni la racine.
+* **Hauteur d'un arbre** : La longueur du plus long chemin de la racine jusqu'à une feuille.
+* **Profondeur d'un nœud** : Distance (nombre d'arêtes) entre ce nœud et la racine.
+
+## **séance 6**
+
+## **séance 7**
