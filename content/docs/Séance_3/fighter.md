@@ -1,6 +1,31 @@
 
 # Séance 3 : utilisation de listes chainées, files d’attente, piles, files de priorité
 
+
+
+
+
+## Organisation du code
+
+> [!TIP]
+>Je dois reconnaître que l'organisation actuelle de mon code n'est pas optimale du point de vue de la maintenabilité et de la clarté. Pour améliorer la structure du projet, il serait judicieux de le découper en plusieurs modules fonctionnels, chacun avec ses propres fichiers d'en-tête (.h) et d'implémentation (.c).
+
+>Une meilleure organisation pourrait suivre l'arborescence suivante :
+
+>1. Dossier `fighter/` contenant :
+>   - `fighter.h` : déclarations des structures et des fonctions
+>   - `fighter.c` : implémentation des fonctions liées aux combattants
+
+>2. Dossier `position/` contenant :
+>   - `position.h` : définition de la structure position et fonctions associées
+>   - `position.c` : implémentation des opérations sur les positions
+
+>3. Dossier `tir/` contenant :
+>   - `tir.h` : déclarations des structures de tirs et file de priorité
+>   - `tir.c` : implémentation des fonctions de gestion des tirs
+
+
+
 Dans mon implémentation, j'ai conçu plusieurs structures qui forment l'architecture de mon jeu de combat. Voici une description détaillée de ces composants :
 
 ### struct Fighter
