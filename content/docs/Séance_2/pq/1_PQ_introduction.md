@@ -23,6 +23,6 @@ Par exemple, est-ce qu’une certaine implémentation reste efficace si on a une
 ### Implémentations de la file de priorité:
 
 * *[Implémentation d'une file de priorité à l'aide d'un tableau (Array)](https://solify2.github.io/programmation-2-doc/docs/s%C3%A9ance_2/pq/pq_array/)*.
-* *[Implémentation d’une file de priorité basée sur une liste chaînée](https://solify2.github.io/programmation-2-doc/docs/s%C3%A9ance_2/pq/pq_list/)*.
-* *[Implémentation d’une file de priorité avec un tas binaire (Binary Heap)](https://solify2.github.io/programmation-2-doc/docs/s%C3%A9ance_2/pq/pq_tree/)*.
-* *[Exercice : Gestion des livres avec une file de priorité basée sur un tas binaire](https://solify2.github.io/programmation-2-doc/docs/s%C3%A9ance_2/pq/pq_books/)*.
+* *[Implémentation d’une file de priorité basée sur une liste chaînée](https://solify2.github.io/programmation-2-doc/docs/s%C3%A9ance_2/pq/4_pq_list/)*.
+* *[Implémentation d’une file de priorité avec un tas binaire (Binary Heap)](https://solify2.github.io/programmation-2-doc/docs/s%C3%A9ance_2/pq/5_pq_tree/)*.
+* *[Exercice : Gestion des livres avec une file de priorité basée sur un tas binaire](https://solify2.github.io/programmation-2-doc/docs/s%C3%A9ance_2/pq/6_pq_books/)*.

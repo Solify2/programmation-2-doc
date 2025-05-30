@@ -75,7 +75,7 @@ int main() {
 }
 ```
 
-``txt
+```txt
 === TRI À GOBELETS === 
 Tableau initial : 
  2 10 4 1 7 22 6 
