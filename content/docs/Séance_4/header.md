@@ -1,3 +1,7 @@
+# Fichier d’en-tête
+
+## Définition des fonctions du tableau tableau associatif (Dictionnaire)
+
 ```c
 #ifndef DICT_H
 #define DICT_H

@@ -1,6 +1,8 @@
 
 # Séance 4: tableaux associatifs et arbres binaires de recherche
 
+## Annuaire
+
 ```c
 #include <stdio.h>
 #include "./annuaire.h"

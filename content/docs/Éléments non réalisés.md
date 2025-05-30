@@ -5,7 +5,7 @@
 - **Exercice chiffrement de données UTF-8**
 
 ### Séance 4
-- **Fonctionnalité de suppression **
+- **Fonctionnalité de suppression**
 - **Rééquilibrage et arbres AVL** 
 
 ### Séance 6
