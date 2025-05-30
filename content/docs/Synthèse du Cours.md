@@ -257,7 +257,7 @@ Enfin, le **Tri Rapide (Quick Sort)** m'a fait découvrir l'élégance des algor
 
 Cette progression m'a permis de comprendre concrètement pourquoi certains algorithmes deviennent impraticables avec l'augmentation des données, tandis que d'autres restent efficaces même sur de gros volumes. Nous avons également exploré les différentes classes de complexité algorithmique, de la constante à l'exponentielle, pour développer une intuition sur le comportement des algorithmes.
 
-## Takeaways de cette Séance
+## Takeaways de la Séance 7
 
 ### Leçons Fondamentales
 
