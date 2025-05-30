@@ -8,9 +8,7 @@ sidebar:
 ---
 
 
-# Séance 1 : autour d’une file
-
-# d’attente ( Queue )
+# Autour d’une file d’attente ( Queue )
 
 Les objectifs de cette séance, et du travail individuel à fournir d’ici la séance suivante, sont :
 
