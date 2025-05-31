@@ -259,8 +259,6 @@ Cette progression m'a permis de comprendre concrètement pourquoi certains algor
 
 ## Takeaways de la Séance 7
 
-### Leçons Fondamentales
-
 **L'importance du choix algorithmique** : La différence entre un bogosort O(n!) et un quicksort O(n log n) peut représenter l'écart entre un algorithme totalement inutilisable et un algorithme utilisable en production pour le même problème.
 
 **Comportement asymptotique** : La complexité révèle comment un algorithme "scale" - une différence négligeable sur 10 éléments devient dramatique sur 10 000 éléments.
