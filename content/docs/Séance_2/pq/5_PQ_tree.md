@@ -4,10 +4,6 @@
 
 La solution la plus **efficace** est le tas binaire (binary heap). C'est une structure de type arbre binaire implémentée avec un tableau, Le principe du tas est que chaque nœud respecte une propriété d'ordre : par exemple, dans un max-priority, chaque parent est toujours plus grand que ses enfants. Grâce à cette organisation, l'insertion comme la suppression se font en **temps logarithmique  O (log n)**, car il suffit de réorganiser une seule branche de l'arbre à chaque opération. C'est donc une structure idéale pour manipuler des files de priorité contenant un grand nombre d'éléments, avec des performances équilibrées.
 
-
-Parfait ! Voici un texte fluide, clair, pas trop formel, qui explique bien ton programme de **tas binaire** tout en intégrant les trois points que tu veux aborder. Je garde un ton spontané, pédagogique et structuré.
-
-
 ### Explication du fonctionnement du tas binaire
 
 Dans la première partie du cours (Programmaton 1), On a vu la notation Big O, qui permet d'estimer la complexité en temps d'un programme, puis on a pris l'exemple de la recherche binaire pour montrer comment on peut améliorer les performances d'un algorithme de recherche en divisant le problème à chaque étape. Contrairement à une recherche simple où on parcourt tous les éléments un à un (ce qui peut être lent si on a beaucoup de données), la recherche binaire permet de **réduire drastiquement le nombre de comparaisons** en divisant la taille du problème par deux à chaque étape.
