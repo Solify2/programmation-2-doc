@@ -408,7 +408,7 @@ void handle_tirs(Fighter_list_t list, PQ_t tirs) {
       Fighter_t fighter = fighter_node->value;
       if (fighter->position.x == current_tir->target.x && fighter->position.y == current_tir->target.y) {
         fighter->pv = fighter->pv - current_tir->power;
-        printf("💥 %s est touché à (%d,%d) et perd %d PV (reste %d PV)\n",
+        printf("%s est touché à (%d,%d) et perd %d PV (reste %d PV)\n",
         fighter->name, fighter->position.x, fighter->position.y, current_tir->power, fighter->pv);
         break;
 
